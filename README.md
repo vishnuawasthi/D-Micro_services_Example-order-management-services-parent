@@ -1,1 +1,1 @@
-# D-Micro_services_Example-order-management-services-parent
+# order-management-services-parent steps to run the application
