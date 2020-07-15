@@ -8,6 +8,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /**
  * Order has below data: - Customer name - - Order date - Shipping address -
@@ -16,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * @author Vishnu Awasthi
  *
  */
+@JsonInclude(value = Include.NON_NULL)
 public class OrderDetailDTO {
 
 	private Long id;
@@ -33,6 +36,8 @@ public class OrderDetailDTO {
 	@NotNull
 	@Valid
 	private List<OrderItemDetail> orderItems;
+
+	private Double total;
 
 	public Long getId() {
 		return id;
@@ -74,10 +79,18 @@ public class OrderDetailDTO {
 		this.orderItems = orderItems;
 	}
 
+	public Double getTotal() {
+		return total;
+	}
+
+	public void setTotal(Double total) {
+		this.total = total;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderDetailDTO [id=" + id + ", customerName=" + customerName + ", shippingAddress=" + shippingAddress
-				+ ", orderDate=" + orderDate + ", orderItems=" + orderItems + "]";
+				+ ", orderDate=" + orderDate + ", orderItems=" + orderItems + ", total=" + total + "]";
 	}
 
 }

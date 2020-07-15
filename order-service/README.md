@@ -1,5 +1,3 @@
-
-
 # Sample request of order service
 http://localhost:8095/api/v1/orders
 Method : POST
@@ -46,4 +44,14 @@ Method : POST
     }
     
   ]
+}
+
+# Exception response 
+
+{
+    "status": 400,
+    "description": "Bad Request",
+    "errors": [
+        "customerName must not be empty"
+    ]
 }

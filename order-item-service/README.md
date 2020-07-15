@@ -13,6 +13,9 @@ create table order_item (id bigint not null, product_code varchar(255), product_
 create sequence seq_order_item start with 1 increment by 1;
 
 # H2 Console 
+Order Service
 http://localhost:8095/h2-console/login.jsp?jsessionid=3839e20971d8f37b9750c97a4b2a35d2
 
+Order Item Service
 http://localhost:8091/h2-console/login.jsp?jsessionid=3839e20971d8f37b9750c97a4b2a35d2
+

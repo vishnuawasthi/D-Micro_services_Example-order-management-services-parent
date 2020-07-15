@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,16 +23,19 @@ import com.orderitem.service.OrderItemService;
 @RequestMapping("/api/v1")
 public class OrderItemController {
 
+	private static final Logger log = Logger.getLogger(OrderItemController.class);
+	
 	@Autowired
 	private OrderItemService orderItemService;
 
 	@PostMapping(value = "/orders/{orderId}/order-items", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Object createOrderItems(@PathVariable("orderId") Long orderId,@Valid @RequestBody List<OrderItemDetailDTO> orderItems) {
+		log.info("Order item request received ..");
 		orderItemService.createOrderItems(orderId, orderItems);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/order/{orderId}/order-items", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/orders/{orderId}/order-items", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Object getOrderItems(@PathVariable("orderId") Long orderId) {
 		List<OrderItemDetailDTO> orderItemList = orderItemService.fetchOrderItems(orderId);
 		return new ResponseEntity<List<OrderItemDetailDTO>>(orderItemList, HttpStatus.OK);

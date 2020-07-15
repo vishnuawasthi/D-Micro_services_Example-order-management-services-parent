@@ -3,6 +3,7 @@ package com.orders.restclients;
 import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,10 @@ public interface OrderItemServiceRestClient {
 	 * @param orderId, Id of the order
 	 * @param orderItems , Associate Order Item with provided order id.
 	 */
-	@PostMapping("/api/v1/orders/{orderId}/order-items")
+	@PostMapping(value="/api/v1/orders/{orderId}/order-items")
 	void createOrderItems(@PathVariable("orderId") Long orderId, @RequestBody List<OrderItemDetail> orderItems);
+	
+	@GetMapping(value="/api/v1/orders/{orderId}/order-items")
+	List<OrderItemDetail> getOrderItemsByOrderId(@PathVariable("orderId") Long orderId);
 
 }
