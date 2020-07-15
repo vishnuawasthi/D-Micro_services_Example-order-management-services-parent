@@ -61,7 +61,7 @@ Method : POST
 Step 12 . Use below end point to get the order details once it is created 
 
  Url: http://localhost:8095/api/v1/orders/{orderId}
- Ex : http://localhost:8095/api/v1/orders/1
+ Ex : http://localhost:8095/api/v1/orders/2
  Method : GET
  Response 
  ```json
