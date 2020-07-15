@@ -70,6 +70,7 @@ public class OrderServiceImpl implements OrderService {
 			if (!CollectionUtils.isEmpty(orderItems)) {
 				orderDetailDTO.setOrderItems(orderItems);
 			}
+			return orderDetailDTO;
 		}
 		throw new OrderNotFoundException(ORDER_NOT_FOUND_MSG);
 	}

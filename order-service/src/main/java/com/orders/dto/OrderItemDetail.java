@@ -3,6 +3,10 @@ package com.orders.dto;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(value=Include.NON_NULL)
 public class OrderItemDetail {
 
 	@NotEmpty
