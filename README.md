@@ -35,6 +35,7 @@ step 10. Once all applications are up and running we can see Eureka dashboard at
 step 11.  Use below request from post man or any rest client to post the order 
 URL http://localhost:8095/api/v1/orders
 Method : POST
+```json
 {
   "customerName": "Vishnu Awasthi",
   "shippingAddress" :"3179 MIG ",
@@ -56,14 +57,14 @@ Method : POST
     
   ]
 }
-
+```
 Step 12 . Use below end point to get the order details once it is created 
 
  Url: http://localhost:8095/api/v1/orders/{orderId}
  Ex : http://localhost:8095/api/v1/orders/1
  Method : GET
  Response 
- 
+ ```json
  {
     "id": 2,
     "customerName": "Vishnu Awasthi",
@@ -83,8 +84,13 @@ Step 12 . Use below end point to get the order details once it is created
     ],
     "total": 5000
 }
-
+```
 Step 13. Exception response
-{ "status": 400, "description": "Bad Request", "errors": [ "customerName must not be empty" ] }
-
+```json
+{ 
+"status": 400, 
+"description": "Bad Request", 
+"errors": [ "customerName must not be empty" ] 
+}
+```
 
