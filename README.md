@@ -84,6 +84,7 @@ Step 12 . Use below end point to get the order details once it is created
     "total": 5000
 }
 
-
+Step 13. Exception response
+{ "status": 400, "description": "Bad Request", "errors": [ "customerName must not be empty" ] }
 
 
