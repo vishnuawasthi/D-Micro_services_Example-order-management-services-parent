@@ -1,6 +1,6 @@
 # order-management-services-parent steps to run the application
 
-Step 1. Clown the repository 
+Step 1. clone the repository 
 
 git clone https://github.com/vishnuawasthi/order-management-services-parent.git
 
@@ -62,7 +62,27 @@ Step 12 . Use below end point to get the order details once it is created
  Url: http://localhost:8095/api/v1/orders/{orderId}
  Ex : http://localhost:8095/api/v1/orders/1
  Method : GET
+ Response 
  
+ {
+    "id": 2,
+    "customerName": "Vishnu Awasthi",
+    "shippingAddress": "3179 MIG ",
+    "orderDate": "2020-07-14",
+    "orderItems": [
+        {
+            "productCode": "EC-01",
+            "productName": "LG Laptop",
+            "quantity": 1
+        },
+        {
+            "productCode": "EC-02",
+            "productName": "LG TV",
+            "quantity": 2
+        }
+    ],
+    "total": 5000
+}
 
 
 
