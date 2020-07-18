@@ -16,7 +16,7 @@
 		<file>${HOME_LOG}</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-			<fileNamePattern>/opt/logs/ogive_services/ogive-services.%d{yyyy-MM-dd}.%i.log
+			<fileNamePattern>/opt/logs/order-item-service/order-item-service.%d{yyyy-MM-dd}.%i.log
 			</fileNamePattern>
 			<!-- each archived file, size max 10MB -->
 			<maxFileSize>10MB</maxFileSize>
@@ -39,7 +39,7 @@
 	</logger>
 
 	<!-- Defines root log levels like INFO, DEBUG -->
-	<root level="INFO">
+	<root level="DEBUG">
 		<appender-ref ref="FILE-ROLLING" />
 		<appender-ref ref="CONSOLE" />
 	</root>
